@@ -2,6 +2,7 @@ import random
 
 
 def random_class():
+    """ Returns a random class from the list """
     character_class = [
         'fighter', 'invoker', 'ranger', 'naturalist', 'doctor', 'spy', 'magician', 'wizard'
     ]
@@ -9,6 +10,7 @@ def random_class():
 
 
 def random_height():
+    """ Randomly picks a height in inches, then converts it to feet and inches """
     height = random.randrange(36, 96)
     inches = int(height % 12)
     feet = int(height / 12)
@@ -16,6 +18,8 @@ def random_height():
 
 
 def random_appearance():
+    """ Returns a random attribute from each list. [0] is the body type description, 
+    [1] is the face description and [2] is the description of the 'vibe' """
     body = [
         'scales', 'worn scars', 'iridescent skin', 'rack of muscles', 'towering physicque',
         'speckled complexion', 'barrel-sized belly', 'head of tentacles', 'generous curves',
@@ -25,7 +29,7 @@ def random_appearance():
     face = [
         'gaunt face', 'sharp teeth', 'fulsome cheeks', 'large, pointy ears', 'vestigial antennae',
         'knee-length beard', 'devestating smile', 'windswept face', 'manicured fuzz', 
-        'ridgid forehead', 'triangular head', 'timeworn face', 'romantic eyes', 'severe jawline',
+        'ridged forehead', 'triangular head', 'timeworn face', 'romantic eyes', 'severe jawline',
         'skeptical eyes', 'radient smile', 'burning eyes', 'heavy brows'
     ]
     vibe = [
@@ -38,6 +42,8 @@ def random_appearance():
 
 
 def random_clothes():
+    """ Picks a random item of clothing from a list. 
+    TODO: Modify the code to pick two unique options """
     clothes = [
         'etched leather armour', 'a billowing jumpsuit', 'a tightly fitted tunic', 
         'religious vestments', 'nicked chainmail', 'runes in my hair', 'a fluttering cape',
@@ -53,6 +59,7 @@ def random_clothes():
 
 
 def random_movement():
+    """" Randomly selects a type of movement """
     movement = [
         'No sense of urgency', 'an effortless glide', 'frenzied footwork', 'a confident step',
         'great difficulty', 'a reliable pace', 'wide-swinging arms', 'a spring in my step',
@@ -64,6 +71,7 @@ def random_movement():
 
 
 def random_home():
+    """ Randomly selects a home """
     home = [
         'a great metropolis', 'a remote village', 'a frontier town', 'a lonely island',
         'a capital city', 'a seastead', 'a remote stronghold', 'a travelling caravan',
@@ -75,6 +83,7 @@ def random_home():
 
 
 def random_fame():
+    """ Randomly selects what their home is famous for """
     fame = [
         'their steady pursuit of pleasure', 'their easygoing temperament',
         'their unhurried sense of time', 'treating strangers with love',
@@ -90,6 +99,7 @@ def random_fame():
 
 
 def random_ideal():
+    """ Selects a random ideal """
     ideal = [
         'order', 'justice', 'heroism', 'compassion', 'generosity',
         'pleasure', 'pragmatism', 'honor', 'power', 'salvation', 'the ends'
@@ -98,6 +108,7 @@ def random_ideal():
 
 
 def random_flaw():
+    """ Selects a random flaw """
     flaw = [
         'fearful', 'megalomaniac', 'idiot', 'impish', 'oblivious',
         'thief', 'hedonist', 'liar', 'reckless', 'wrathful', 'vain'
@@ -106,6 +117,7 @@ def random_flaw():
 
 
 def random_dream():
+    """ Selects a random dream """
     dream = [
         'returning to my hometown as a renowned hero', 'becoming tremendously wealthy',
         'freeing myself from a gang that wants me dead', 'finding the source of eternal life',
@@ -125,15 +137,17 @@ def random_dream():
     return random.choice(dream)
 
 
+# Take user input for name and pronouns TODO: Random options?
 name =  input("What is your name?:       ")
 pronouns = input("What is your pronouns?:   ")
 
+# Print character sheet to screen TODO: Seperate this from main functions
 print("Hello,")
 print(f"My name is {name} ({pronouns}).")
 print(f"I am {random.randrange(2, 300)} years old and stand {random_height()} feet tall.")
 print(f"I'm the party's {random_class()}.")
-print(f"When people first see me, they notice my {random_appearance()[0]}, {random_appearance()[1]} and {random_appearance()[2]}.")
-print(f"I wear {random_clothes()}, {random_clothes()} and move with {random_movement()}.")
+print(f"When people first see me, they notice my {random_appearance()[0]}; {random_appearance()[1]}; and {random_appearance()[2]}.")
+print(f"I wear {random_clothes()}; {random_clothes()}; and move with {random_movement()}.")
 print(f"I'm from {random_home()} where my people are known for {random_fame()}.")
 print(f"I believe in {random_ideal()}, but my {random_flaw()} side can get in my way.")
 print(f"I dream of {random_dream()}.")
