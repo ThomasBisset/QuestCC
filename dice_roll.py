@@ -10,7 +10,7 @@ def d20roll():
     """
     roll = random.randint(1, 20)
     if roll == 1:
-        outcome = "Catasrophe"
+        outcome = "Catastrophe"
     elif 2 <= roll <= 5:
         outcome = "Failure"
     elif 6 <= roll <= 10:
